@@ -78,7 +78,7 @@ __metadata:
     eslint-plugin-import: ^2.22.1
     eslint-plugin-prettier: 3.3.1
     eslint-plugin-react: ^7.23.1
-    next: ^10.1.2
+    next: ^10.0.4
     postcss: latest
     prettier: ^2.2.1
     react: ^17.0.1
@@ -3469,7 +3469,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"next@npm:^10.1.2":
+"next@npm:^10.0.4":
   version: 10.1.2
   resolution: "next@npm:10.1.2"
   dependencies:
