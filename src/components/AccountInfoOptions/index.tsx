@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import { useFormContext } from 'react-hook-form';
+import React, { ReactElement } from "react";
+import { useFormContext } from "react-hook-form";
 
 function AccountInfoOptions(): ReactElement {
   const { register } = useFormContext();

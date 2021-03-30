@@ -1,9 +1,12 @@
-import { AppContext, AppInitialProps } from 'next/app';
-import Head from 'next/head';
-import React, { ReactElement } from 'react';
-import 'tailwindcss/tailwind.css';
+import { AppContext, AppInitialProps } from "next/app";
+import Head from "next/head";
+import React, { ReactElement } from "react";
+import "tailwindcss/tailwind.css";
 
-function App({ Component, pageProps }: AppContext & AppInitialProps): ReactElement {
+function App({
+  Component,
+  pageProps,
+}: AppContext & AppInitialProps): ReactElement {
   return (
     <>
       <Head>
