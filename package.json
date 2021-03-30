@@ -1,0 +1,39 @@
+{
+  "name": "@blockfrost/blockfrost-websocket-link-ui",
+  "scripts": {
+    "build": "next build",
+    "deps": "rimraf 'node_modules' && yarn",
+    "dev": "next",
+    "lint": "eslint './{src,pages}/**/*' --ext .tsx,.ts",
+    "start": "next start",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "@types/react-select": "^4.0.13",
+    "@types/valid-url": "^1.0.3",
+    "next": "^10.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.15.5",
+    "react-select": "^4.2.1",
+    "react-use-websocket": "^2.5.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/ws": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "autoprefixer": "latest",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "postcss": "latest",
+    "prettier": "^2.2.1",
+    "tailwindcss": "2.0.4",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  }
+}
