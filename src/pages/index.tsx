@@ -8,7 +8,9 @@ const Index = (): ReactElement => {
     defaultValues: {
       socketUrl: "wss://trezor-cardano-mainnet.blockfrost.io",
       accountInfoKey:
-        "f1f3816b898cb100b336c169a1ca3e2571ed8fa55687c58a381ece7406cdb88b7703a2088169d725d7a3f0b03e6d2f538d10f81ea0df8869e025309c259f15dc",
+        "6d17587575a3b4f0f86ebad3977e8f7e4981faa863eccf5c1467065c74fe3435943769446dd290d103fb3d360128e86de4b47faea73ffb0900c94c6a61ef9ea2",
+      txId: "28172ea876c3d1e691284e5179fae2feb3e69d7d41e43f8023dc380115741026",
+      details: "basic",
     },
   });
 

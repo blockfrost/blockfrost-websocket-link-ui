@@ -1,7 +1,8 @@
-import React, { ReactElement, useState, useRef, useMemo } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import Select from "react-select";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-import AccountInfoOptions from "../AccountInfoOptions";
+import AccountInfoOptions from "./AccountInfoOptions";
+import GetTransactionOptions from "./GetTransactionOptions";
 import { getStatusColor, getMessagesList, getParams } from "../../utils";
 import { MESSAGES } from "../../constants";
 import { isUri } from "valid-url";
@@ -12,17 +13,16 @@ const Index = (): ReactElement => {
   const [command, setCommand] = useState<keyof typeof MESSAGES>(
     "GET_SERVER_INFO"
   );
-  const messageHistory = useRef([]);
+  const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const options = getMessagesList();
   const { register, getValues } = useFormContext();
   const { sendMessage, lastMessage, readyState } = useWebSocket(
     getValues("socketUrl") || socketUrl
   );
 
-  messageHistory.current = useMemo(
-    () => messageHistory.current.concat(lastMessage),
-    [lastMessage]
-  );
+  useEffect(() => setMessageHistory([...messageHistory, lastMessage]), [
+    lastMessage,
+  ]);
 
   const connectionStatus = {
     [ReadyState.CONNECTING]: "CONNECTING",
@@ -77,6 +77,7 @@ const Index = (): ReactElement => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
           onClick={() => {
             const params = getParams(command, getValues);
+            console.log("awawa", JSON.stringify({ command, params }));
             sendMessage(JSON.stringify({ command, params }));
           }}
         >
@@ -84,17 +85,23 @@ const Index = (): ReactElement => {
         </button>
       </div>
       {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
-      {lastMessage && connectionStatus === "OPEN" && (
-        <div className="mt-10">
-          <h1 className="text-1md font-bold leading-7 text-gray-900 sm:text-1xl sm:truncate">
-            RESPONSE
-          </h1>
-          <pre className="px-6 py-4 bg-white shadow-xs mt-3 overflow-auto">
-            {lastMessage &&
-              JSON.stringify(JSON.parse(lastMessage.data), null, 2)}
-          </pre>
-        </div>
-      )}
+      {command === "GET_TRANSACTION" && <GetTransactionOptions />}
+      <div className="mt-10">
+        <h1 className="text-1md font-bold leading-7 text-gray-900 sm:text-1xl sm:truncate">
+          RESPONSE
+        </h1>
+      </div>
+      {messageHistory.reverse().map((message, idx) => (
+        <span key={idx}>
+          {connectionStatus === "OPEN" && message && (
+            <div className="mt-2">
+              <pre className="px-6 py-4 bg-white shadow-xs mt-3 overflow-auto">
+                {JSON.stringify(JSON.parse(message.data), null, 2)}
+              </pre>
+            </div>
+          )}
+        </span>
+      ))}
     </>
   );
 };

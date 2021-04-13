@@ -29,11 +29,12 @@ export const getParams = (
 ): any => {
   switch (command) {
     case "GET_ACCOUNT_INFO": {
-      const accountInfoKey = getValues("accountInfoKey");
-      return { descriptor: accountInfoKey };
+      const descriptor = getValues("accountInfoKey");
+      return { descriptor };
     }
-    case "GET_SERVER_INFO": {
-      return {};
+    case "GET_TRANSACTION": {
+      const txId = getValues("txId");
+      return { txId };
     }
     default:
       return {};
