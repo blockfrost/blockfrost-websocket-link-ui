@@ -30,7 +30,8 @@ export const getParams = (
   switch (command) {
     case "GET_ACCOUNT_INFO": {
       const descriptor = getValues("accountInfoKey");
-      return { descriptor };
+      const details = getValues("details").value;
+      return { descriptor, details };
     }
     case "GET_TRANSACTION": {
       const txId = getValues("txId");

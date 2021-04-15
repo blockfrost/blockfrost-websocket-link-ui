@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { useFormContext } from "react-hook-form";
 
-function GetTransactionOptions(): ReactElement {
+function AccountInfoOptions(): ReactElement {
   const { register } = useFormContext();
 
   return (
@@ -11,17 +11,17 @@ function GetTransactionOptions(): ReactElement {
       </h1>
       <div className="flex flex-col	 mt-5">
         <label className="block text-grey-darker text-sm font-bold mb-2">
-          TX ID
+          TX DATA
         </label>
         <input
           ref={register}
           className="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
           type="text"
-          name="getTransactionTxId"
+          name="pushTxData"
         />
       </div>
     </>
   );
 }
 
-export default GetTransactionOptions;
+export default AccountInfoOptions;
