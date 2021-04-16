@@ -51,7 +51,7 @@ const Index = (): ReactElement => {
             name="socketUrl"
             control={control}
             options={servers}
-            as={<Select />}
+            as={<Select instanceId="1" />}
           />
         </div>
         <div
@@ -68,7 +68,7 @@ const Index = (): ReactElement => {
             name="command"
             control={control}
             options={messages}
-            as={<Select />}
+            as={<Select instanceId="2" />}
           />
         </div>
         <button

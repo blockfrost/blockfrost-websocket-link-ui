@@ -39,7 +39,12 @@ function AccountInfoOptions(): ReactElement {
               { value: "txids", label: "txids" },
               { value: "txs", label: "txs" },
             ]}
-            as={<Select defaultValue={{ value: "basic", label: "basic" }} />}
+            as={
+              <Select
+                defaultValue={{ value: "basic", label: "basic" }}
+                instanceId="3"
+              />
+            }
           />
         </div>
       </div>

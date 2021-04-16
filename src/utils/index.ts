@@ -40,8 +40,12 @@ export const getParams = (
       return { descriptor, details };
     }
     case "GET_TRANSACTION": {
-      const txId = getValues("txId");
+      const txId = getValues("getTxId");
       return { txId };
+    }
+    case "GET_BLOCK": {
+      const hashOrNumber = getValues("getBlockHashOrNumber");
+      return { hashOrNumber };
     }
     default:
       return {};
