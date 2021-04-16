@@ -1,4 +1,4 @@
-import { MESSAGES_PARAMS, MESSAGES } from "../constants";
+import { MESSAGES_PARAMS, MESSAGES, SERVERS } from "../constants";
 import { Option } from "../types";
 import { UseFormMethods } from "react-hook-form";
 
@@ -23,6 +23,12 @@ export const getMessagesList = (): Option[] => {
   return options;
 };
 
+export const getServerOptions = (): Option[] => {
+  const options = [];
+  SERVERS.map((server) => options.push({ value: server, label: server }));
+  return options;
+};
+
 export const getParams = (
   command: keyof typeof MESSAGES,
   getValues: UseFormMethods["getValues"]
@@ -30,7 +36,7 @@ export const getParams = (
   switch (command) {
     case "GET_ACCOUNT_INFO": {
       const descriptor = getValues("accountInfoKey");
-      const details = getValues("details").value;
+      const details = getValues("accountInfoDetails").value;
       return { descriptor, details };
     }
     case "GET_TRANSACTION": {

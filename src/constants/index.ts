@@ -15,6 +15,12 @@ export const MESSAGES = {
   PUSH_TRANSACTION: "PUSH_TRANSACTION",
 };
 
+export const SERVERS = [
+  "ws://localhost:3005",
+  "wss://trezor-cardano-mainnet.blockfrost.io",
+  "wss://trezor-cardano-testnet.blockfrost.io",
+];
+
 export const MESSAGES_PARAMS = [
   {
     name: MESSAGES.GET_SERVER_INFO,
