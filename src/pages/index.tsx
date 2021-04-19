@@ -8,8 +8,8 @@ const Index = (): ReactElement => {
   const methods = useForm<FormValues>({
     defaultValues: {
       socketUrl: {
-        value: "wss://trezor-cardano-mainnet.blockfrost.io",
-        label: "wss://trezor-cardano-mainnet.blockfrost.io",
+        value: "ws://localhost:3005",
+        label: "ws://localhost:3005",
       },
       command: {
         value: "GET_SERVER_INFO",

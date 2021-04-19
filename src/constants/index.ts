@@ -16,9 +16,9 @@ export const MESSAGES = {
 };
 
 export const SERVERS = [
-  // "wss://trezor-cardano-mainnet.blockfrost.io",
-  // "wss://trezor-cardano-testnet.blockfrost.io",
   "ws://localhost:3005",
+  "wss://trezor-cardano-mainnet.blockfrost.io",
+  "wss://trezor-cardano-testnet.blockfrost.io",
 ];
 
 export const MESSAGES_PARAMS = [
