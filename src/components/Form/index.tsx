@@ -26,7 +26,7 @@ const Index = (): ReactElement => {
   const { sendMessage, lastMessage, readyState } = useWebSocket(
     socketUrl ? socketUrl.value : null,
     {
-      shouldReconnect: (closeEvent) => {
+      shouldReconnect: () => {
         return didUnmount.current === false;
       },
       reconnectAttempts: 10,
@@ -69,11 +69,12 @@ const Index = (): ReactElement => {
           />
         </div>
         <div
+          style={{ minWidth: 250 }}
           className={`${getStatusColor(
             connectionStatus
-          )} text-white p-2 rounded leading-none flex items-center font-semibold ml-2`}
+          )} text-white p-2 rounded leading-none flex items-center justify-center font-semibold ml-2`}
         >
-          {connectionStatus}
+          CONNECTION {connectionStatus}
         </div>
       </div>
       <div className="mt-5 flex flex-row">
@@ -86,7 +87,7 @@ const Index = (): ReactElement => {
           />
         </div>
         <button
-          style={{ minWidth: 187 }}
+          style={{ minWidth: 250 }}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
           onClick={() => {
             const params = getParams(command, getValues);
