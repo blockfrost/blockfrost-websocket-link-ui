@@ -39,6 +39,10 @@ export const getParams = (
       const details = getValues("accountInfoDetails").value;
       return { descriptor, details };
     }
+    case "GET_ACCOUNT_UTXO": {
+      const descriptor = getValues("accountInfoKey");
+      return { descriptor };
+    }
     case "GET_TRANSACTION": {
       const txId = getValues("getTxId");
       return { txId };
