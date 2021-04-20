@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect } from "react";
+import React, { ReactElement, useState, useEffect, useRef } from "react";
 import Select from "react-select";
 import { Option } from "../../types";
 import useWebSocket, { ReadyState } from "react-use-websocket";
@@ -16,6 +16,7 @@ import { MESSAGES } from "../../constants";
 import { useFormContext, Controller, useWatch } from "react-hook-form";
 
 const Index = (): ReactElement => {
+  const didUnmount = useRef(false);
   const { getValues, control } = useFormContext();
   const socketUrl: Option = useWatch({ control, name: "socketUrl" });
   const cmd: any = useWatch({ control, name: "command" });
@@ -23,12 +24,25 @@ const Index = (): ReactElement => {
   const messages = getMessagesList();
   const servers = getServerOptions();
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    socketUrl ? socketUrl.value : null
+    socketUrl ? socketUrl.value : null,
+    {
+      shouldReconnect: (closeEvent) => {
+        return didUnmount.current === false;
+      },
+      reconnectAttempts: 10,
+      reconnectInterval: 3000,
+    }
   );
 
   useEffect(() => setMessageHistory([...messageHistory, lastMessage]), [
     lastMessage,
   ]);
+
+  useEffect(() => {
+    return () => {
+      didUnmount.current = true;
+    };
+  }, []);
 
   const connectionStatus = {
     [ReadyState.CONNECTING]: "CONNECTING",
