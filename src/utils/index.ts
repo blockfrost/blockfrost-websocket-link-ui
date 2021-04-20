@@ -47,10 +47,15 @@ export const getParams = (
       const txId = getValues("getTxId");
       return { txId };
     }
+    case "SEND_TRANSACTION": {
+      const transaction = getValues("sendTransactionTransaction");
+      return { transaction };
+    }
     case "GET_BLOCK": {
       const hashOrNumber = getValues("getBlockHashOrNumber");
       return { hashOrNumber };
     }
+
     default:
       return {};
   }

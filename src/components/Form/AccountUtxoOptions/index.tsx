@@ -1,9 +1,8 @@
 import React, { ReactElement } from "react";
-import { useFormContext, Controller } from "react-hook-form";
-import Select from "react-select";
+import { useFormContext } from "react-hook-form";
 
 function AccountInfoOptions(): ReactElement {
-  const { register, control } = useFormContext();
+  const { register } = useFormContext();
 
   return (
     <>

@@ -4,7 +4,7 @@ import { Option } from "../../types";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import AccountInfoOptions from "./AccountInfoOptions";
 import GetTransactionOptions from "./GetTransactionOptions";
-import PushTxOptions from "./PushTxOptions";
+import SendTransactionOptions from "./SendTransactionOptions";
 import GetBlockOptions from "./GetBlockOptions";
 import AccountUtxoOptions from "./AccountUtxoOptions";
 import {
@@ -24,13 +24,13 @@ const Index = (): ReactElement => {
   const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const messages = getMessagesList();
   const servers = getServerOptions();
-  const { sendMessage, lastMessage, readyState } = useWebSocket(
+  const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
     socketUrl ? socketUrl.value : null,
     {
       shouldReconnect: () => {
         return didUnmount.current === false;
       },
-      reconnectAttempts: 10,
+      reconnectAttempts: 20,
       reconnectInterval: 3000,
     }
   );
@@ -92,7 +92,7 @@ const Index = (): ReactElement => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
           onClick={() => {
             const params = getParams(command, getValues);
-            sendMessage(JSON.stringify({ command, params }));
+            sendJsonMessage({ command, params });
           }}
         >
           SEND MESSAGE
@@ -101,7 +101,7 @@ const Index = (): ReactElement => {
       {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
       {command === "GET_ACCOUNT_UTXO" && <AccountUtxoOptions />}
       {command === "GET_TRANSACTION" && <GetTransactionOptions />}
-      {command === "PUSH_TRANSACTION" && <PushTxOptions />}
+      {command === "SEND_TRANSACTION" && <SendTransactionOptions />}
       {command === "GET_BLOCK" && <GetBlockOptions />}
       <div className="mt-10">
         <h1 className="text-1md font-bold leading-7 text-gray-900 sm:text-1xl sm:truncate">

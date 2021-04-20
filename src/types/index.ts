@@ -1,4 +1,4 @@
-import { MESSAGES } from "../constants"
+import { MESSAGES } from "../constants";
 
 export interface Option {
   value: string;
@@ -9,11 +9,11 @@ type Message = keyof typeof MESSAGES;
 
 export interface FormValues {
   socketUrl: Option;
-  command: {value: Message, label: Message};
+  command: { value: Message; label: Message };
   accountInfoKey: string;
   getTxId: string;
   accountInfoDetails: Option;
   getTransactionTxId: string;
-  sendTxData: string;
-  getBlockHashOrNumber:  string | number;
+  sendTransactionTransaction: string;
+  getBlockHashOrNumber: string | number;
 }

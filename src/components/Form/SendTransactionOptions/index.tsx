@@ -11,13 +11,13 @@ function AccountInfoOptions(): ReactElement {
       </h1>
       <div className="flex flex-col	 mt-5">
         <label className="block text-grey-darker text-sm font-bold mb-2">
-          TX DATA
+          TRANSACTION
         </label>
         <input
           ref={register}
           className="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
           type="text"
-          name="pushTxData"
+          name="sendTransactionTransaction"
         />
       </div>
     </>

@@ -4,7 +4,7 @@
     "build": "next build",
     "deps": "rimraf 'node_modules' && yarn",
     "dev": "next",
-    "lint": "eslint './{src,pages}/**/*' --ext .tsx,.ts",
+    "lint": "eslint './src/**/*' --ext .tsx,.ts",
     "start": "next start",
     "test": "jest --coverage"
   },
