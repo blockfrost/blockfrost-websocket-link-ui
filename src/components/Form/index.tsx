@@ -6,6 +6,7 @@ import AccountInfoOptions from "./AccountInfoOptions";
 import GetTransactionOptions from "./GetTransactionOptions";
 import PushTxOptions from "./PushTxOptions";
 import GetBlockOptions from "./GetBlockOptions";
+import AccountUtxoOptions from "./AccountUtxoOptions";
 import {
   getStatusColor,
   getMessagesList,
@@ -98,6 +99,7 @@ const Index = (): ReactElement => {
         </button>
       </div>
       {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
+      {command === "GET_ACCOUNT_UTXO" && <AccountUtxoOptions />}
       {command === "GET_TRANSACTION" && <GetTransactionOptions />}
       {command === "PUSH_TRANSACTION" && <PushTxOptions />}
       {command === "GET_BLOCK" && <GetBlockOptions />}
