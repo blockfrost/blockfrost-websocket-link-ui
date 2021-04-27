@@ -12,6 +12,8 @@ export interface FormValues {
   command: { value: Message; label: Message };
   accountInfoKey: string;
   getTxId: string;
+  accountInfoPageSize: number;
+  accountInfoPage: number;
   accountInfoDetails: Option;
   getTransactionTxId: string;
   sendTransactionTransaction: string;

@@ -47,6 +47,30 @@ function AccountInfoOptions(): ReactElement {
             }
           />
         </div>
+        <div className="flex flex-col pl-4" style={{ minWidth: 200 }}>
+          <label className="block text-grey-darker text-sm font-bold mb-2">
+            Page (txs only)
+          </label>
+          <input
+            ref={register}
+            className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+            id="accountInfoPage"
+            type="text"
+            name="accountInfoPage"
+          />
+        </div>
+        <div className="flex flex-col pl-4" style={{ minWidth: 200 }}>
+          <label className="block text-grey-darker text-sm font-bold mb-2">
+            Items per page (txs only)
+          </label>
+          <input
+            ref={register}
+            className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+            id="accountInfoPageSize"
+            type="text"
+            name="accountInfoPageSize"
+          />
+        </div>
       </div>
     </>
   );

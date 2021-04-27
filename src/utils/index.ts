@@ -37,7 +37,14 @@ export const getParams = (
     case "GET_ACCOUNT_INFO": {
       const descriptor = getValues("accountInfoKey");
       const details = getValues("accountInfoDetails").value;
-      return { descriptor, details };
+      const page = getValues("accountInfoPage");
+      const pageSize = getValues("accountInfoPageSize");
+      return {
+        descriptor,
+        details,
+        page,
+        pageSize,
+      };
     }
     case "GET_ACCOUNT_UTXO": {
       const descriptor = getValues("accountInfoKey");
