@@ -37,8 +37,9 @@ export const getParams = (
     case "GET_ACCOUNT_INFO": {
       const descriptor = getValues("accountInfoKey");
       const details = getValues("accountInfoDetails").value;
-      const page = getValues("accountInfoPage");
-      const pageSize = getValues("accountInfoPageSize");
+      const page = parseInt(getValues("accountInfoPage"), 10);
+      const pageSize = parseInt(getValues("accountInfoPageSize"), 10);
+
       return {
         descriptor,
         details,
@@ -46,18 +47,22 @@ export const getParams = (
         pageSize,
       };
     }
+
     case "GET_ACCOUNT_UTXO": {
       const descriptor = getValues("accountInfoKey");
       return { descriptor };
     }
+
     case "GET_TRANSACTION": {
       const txId = getValues("getTxId");
       return { txId };
     }
+
     case "SEND_TRANSACTION": {
       const transaction = getValues("sendTransactionTransaction");
       return { transaction };
     }
+
     case "GET_BLOCK": {
       const hashOrNumber = getValues("getBlockHashOrNumber");
       return { hashOrNumber };
