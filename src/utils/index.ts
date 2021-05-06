@@ -54,7 +54,7 @@ export const getParams = (
     }
 
     case "GET_TRANSACTION": {
-      const txId = getValues("getTxId");
+      const txId = getValues("getTransactionTxId");
       return { txId };
     }
 
