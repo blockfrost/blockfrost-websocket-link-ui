@@ -101,7 +101,7 @@ const Index = (): ReactElement => {
       {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
       {command === "GET_ACCOUNT_UTXO" && <AccountUtxoOptions />}
       {command === "GET_TRANSACTION" && <GetTransactionOptions />}
-      {command === "SEND_TRANSACTION" && <SendTransactionOptions />}
+      {command === "PUSH_TRANSACTION" && <SendTransactionOptions />}
       {command === "GET_BLOCK" && <GetBlockOptions />}
       <div className="mt-10">
         <h1 className="text-1md font-bold leading-7 text-gray-900 sm:text-1xl sm:truncate">
