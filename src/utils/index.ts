@@ -58,7 +58,7 @@ export const getParams = (
       return { txId };
     }
 
-    case "SEND_TRANSACTION": {
+    case "PUSH_TRANSACTION": {
       const transaction = getValues("sendTransactionTransaction");
       return { transaction };
     }
