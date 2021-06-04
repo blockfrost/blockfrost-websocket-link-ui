@@ -97,12 +97,22 @@ const Index = (): ReactElement => {
         >
           SEND MESSAGE
         </button>
+        <button
+          className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded ml-2"
+          onClick={() => {
+            setMessageHistory([]);
+          }}
+        >
+          CLEAR HISTORY
+        </button>
       </div>
-      {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
-      {command === "GET_ACCOUNT_UTXO" && <AccountUtxoOptions />}
-      {command === "GET_TRANSACTION" && <GetTransactionOptions />}
-      {command === "PUSH_TRANSACTION" && <SendTransactionOptions />}
-      {command === "GET_BLOCK" && <GetBlockOptions />}
+      <div className="h-30">
+        {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
+        {command === "GET_ACCOUNT_UTXO" && <AccountUtxoOptions />}
+        {command === "GET_TRANSACTION" && <GetTransactionOptions />}
+        {command === "PUSH_TRANSACTION" && <SendTransactionOptions />}
+        {command === "GET_BLOCK" && <GetBlockOptions />}
+      </div>
       <div className="mt-10">
         <h1 className="text-1md font-bold leading-7 text-gray-900 sm:text-1xl sm:truncate">
           RESPONSE

@@ -7,11 +7,9 @@ export const MESSAGES = {
 
   SUBSCRIBE_BLOCK: "SUBSCRIBE_BLOCK",
   SUBSCRIBE_ADDRESS: "SUBSCRIBE_ADDRESS",
-  SUBSCRIBE_ACCOUNT: "SUBSCRIBE_ACCOUNT",
 
   UNSUBSCRIBE_BLOCK: "UNSUBSCRIBE_BLOCK",
   UNSUBSCRIBE_ADDRESS: "UNSUBSCRIBE_ADDRESS",
-  UNSUBSCRIBE_ACCOUNT: "UNSUBSCRIBE_ACCOUNT",
 
   PUSH_TRANSACTION: "PUSH_TRANSACTION",
 } as const;
@@ -86,16 +84,6 @@ export const MESSAGES_PARAMS = [
     params: [{ name: "address", defaultValue: "" }],
   },
   {
-    name: MESSAGES.SUBSCRIBE_ACCOUNT,
-    params: [
-      {
-        name: "subscribeAccountInfoKey",
-        defaultValue:
-          "f1f3816b898cb100b336c169a1ca3e2571ed8fa55687c58a381ece7406cdb88b7703a2088169d725d7a3f0b03e6d2f538d10f81ea0df8869e025309c259f15dc",
-      },
-    ],
-  },
-  {
     name: MESSAGES.UNSUBSCRIBE_BLOCK,
     params: [
       {
@@ -104,10 +92,6 @@ export const MESSAGES_PARAMS = [
           "28172ea876c3d1e691284e5179fae2feb3e69d7d41e43f8023dc380115741026",
       },
     ],
-  },
-  {
-    name: MESSAGES.UNSUBSCRIBE_ACCOUNT,
-    params: [],
   },
   {
     name: MESSAGES.UNSUBSCRIBE_ADDRESS,
