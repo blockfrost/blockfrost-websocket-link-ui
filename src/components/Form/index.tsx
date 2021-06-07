@@ -24,6 +24,7 @@ const Index = (): ReactElement => {
   const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const messages = getMessagesList();
   const servers = getServerOptions();
+  let messageId = 0;
   const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
     socketUrl ? socketUrl.value : null,
     {
@@ -92,7 +93,8 @@ const Index = (): ReactElement => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
           onClick={() => {
             const params = getParams(command, getValues);
-            sendJsonMessage({ command, params });
+            sendJsonMessage({ id: messageId, command, params });
+            messageId++;
           }}
         >
           SEND MESSAGE
