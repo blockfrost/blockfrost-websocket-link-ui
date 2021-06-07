@@ -18,13 +18,13 @@ import { useFormContext, Controller, useWatch } from "react-hook-form";
 
 const Index = (): ReactElement => {
   const didUnmount = useRef(false);
+  const [messageId, setMessageId] = useState(0);
   const { getValues, control } = useFormContext();
   const socketUrl: Option = useWatch({ control, name: "socketUrl" });
   const cmd: any = useWatch({ control, name: "command" });
   const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const messages = getMessagesList();
   const servers = getServerOptions();
-  let messageId = 0;
   const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
     socketUrl ? socketUrl.value : null,
     {
@@ -94,7 +94,7 @@ const Index = (): ReactElement => {
           onClick={() => {
             const params = getParams(command, getValues);
             sendJsonMessage({ id: messageId, command, params });
-            messageId++;
+            setMessageId(messageId + 1);
           }}
         >
           SEND MESSAGE
