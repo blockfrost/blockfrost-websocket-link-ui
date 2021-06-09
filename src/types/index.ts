@@ -18,4 +18,5 @@ export interface FormValues {
   getTransactionTxId: string;
   sendTransactionTransaction: string;
   getBlockHashOrNumber: string | number;
+  subscribeAddressAddresses: string;
 }

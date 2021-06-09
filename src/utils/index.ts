@@ -68,6 +68,17 @@ export const getParams = (
       return { hashOrNumber };
     }
 
+    case "SUBSCRIBE_ADDRESS": {
+      const inputString = getValues("subscribeAddressAddresses");
+      try {
+        const addresses = inputString.replace(/\s/g, "").split(",");
+        return { addresses };
+      } catch (err) {
+        console.log(err);
+        return [];
+      }
+    }
+
     default:
       return {};
   }

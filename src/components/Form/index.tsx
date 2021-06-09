@@ -7,6 +7,7 @@ import GetTransactionOptions from "./GetTransactionOptions";
 import SendTransactionOptions from "./SendTransactionOptions";
 import GetBlockOptions from "./GetBlockOptions";
 import AccountUtxoOptions from "./AccountUtxoOptions";
+import SubscribeAddressOptions from "./SubscribeAddressOptions";
 import {
   getStatusColor,
   getMessagesList,
@@ -114,6 +115,7 @@ const Index = (): ReactElement => {
         {command === "GET_TRANSACTION" && <GetTransactionOptions />}
         {command === "PUSH_TRANSACTION" && <SendTransactionOptions />}
         {command === "GET_BLOCK" && <GetBlockOptions />}
+        {command === "SUBSCRIBE_ADDRESS" && <SubscribeAddressOptions />}
       </div>
       <div className="mt-10">
         <h1 className="text-1md font-bold leading-7 text-gray-900 sm:text-1xl sm:truncate">
