@@ -11,6 +11,7 @@ export interface FormValues {
   socketUrl: Option;
   command: { value: Message; label: Message };
   accountInfoKey: string;
+  balanceHistoryKey: string;
   getTxId: string;
   accountInfoPageSize: number;
   accountInfoPage: number;

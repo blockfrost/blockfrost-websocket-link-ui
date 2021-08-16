@@ -6,6 +6,7 @@ import AccountInfoOptions from "./AccountInfoOptions";
 import GetTransactionOptions from "./GetTransactionOptions";
 import SendTransactionOptions from "./SendTransactionOptions";
 import GetBlockOptions from "./GetBlockOptions";
+import BalanceHistoryOptions from "./BalanceHistoryOptions";
 import AccountUtxoOptions from "./AccountUtxoOptions";
 import SubscribeAddressOptions from "./SubscribeAddressOptions";
 import {
@@ -113,6 +114,7 @@ const Index = (): ReactElement => {
         {command === "GET_ACCOUNT_INFO" && <AccountInfoOptions />}
         {command === "GET_ACCOUNT_UTXO" && <AccountUtxoOptions />}
         {command === "GET_TRANSACTION" && <GetTransactionOptions />}
+        {command === "GET_BALANCE_HISTORY" && <BalanceHistoryOptions />}
         {command === "PUSH_TRANSACTION" && <SendTransactionOptions />}
         {command === "GET_BLOCK" && <GetBlockOptions />}
         {command === "SUBSCRIBE_ADDRESS" && <SubscribeAddressOptions />}

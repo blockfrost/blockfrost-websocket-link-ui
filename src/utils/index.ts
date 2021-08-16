@@ -47,6 +47,19 @@ export const getParams = (
         pageSize,
       };
     }
+    case "GET_BALANCE_HISTORY": {
+      const descriptor = getValues("balanceHistoryKey");
+      const from = getValues("from");
+      const to = getValues("to");
+      const groupBy = getValues("groupBy");
+
+      return {
+        descriptor,
+        from,
+        to,
+        groupBy,
+      };
+    }
 
     case "GET_ACCOUNT_UTXO": {
       const descriptor = getValues("accountInfoKey");

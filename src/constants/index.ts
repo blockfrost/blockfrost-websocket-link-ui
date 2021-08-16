@@ -3,6 +3,7 @@ export const MESSAGES = {
   GET_ACCOUNT_UTXO: "GET_ACCOUNT_UTXO",
   GET_BLOCK: "GET_BLOCK",
   GET_SERVER_INFO: "GET_SERVER_INFO",
+  GET_BALANCE_HISTORY: "GET_BALANCE_HISTORY",
   GET_TRANSACTION: "GET_TRANSACTION",
   ESTIMATE_FEE: "ESTIMATE_FEE",
 
@@ -57,6 +58,28 @@ export const MESSAGES_PARAMS = [
         name: "hashOrNumber",
         defaultValue:
           "28172ea876c3d1e691284e5179fae2feb3e69d7d41e43f8023dc380115741026",
+      },
+    ],
+  },
+  {
+    name: MESSAGES.GET_BALANCE_HISTORY,
+    params: [
+      {
+        name: "balanceHistoryKey",
+        defaultValue:
+          "f1f3816b898cb100b336c169a1ca3e2571ed8fa55687c58a381ece7406cdb88b7703a2088169d725d7a3f0b03e6d2f538d10f81ea0df8869e025309c259f15dc",
+      },
+      {
+        name: "from",
+        defaultValue: "0",
+      },
+      {
+        name: "to",
+        defaultValue: "0",
+      },
+      {
+        name: "groupBy",
+        defaultValue: "sec",
       },
     ],
   },
