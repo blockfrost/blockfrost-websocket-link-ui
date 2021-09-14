@@ -127,7 +127,7 @@ __metadata:
     prettier: ^2.4.0
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-hook-form: ^7.15.3
+    react-hook-form: ^6.15.5
     react-select: ^4.3.1
     react-use-websocket: ^2.7.1
     tailwindcss: 2.2.15
@@ -4669,12 +4669,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.15.3":
-  version: 7.15.3
-  resolution: "react-hook-form@npm:7.15.3"
+"react-hook-form@npm:^6.15.5":
+  version: 6.15.8
+  resolution: "react-hook-form@npm:6.15.8"
   peerDependencies:
     react: ^16.8.0 || ^17
-  checksum: 5813832dba252cb0f44a8d09c1fe471311e99cb7d68ca94775a2e12af3e2d4a5d89640a4d07a0144be2eb00687452a1829630c42ee2468278f7ffdb7ab4f1dca
+  checksum: 867d0f8ab1c1a449ebe7027ce56c8b382e7ea516b60c9dcb1484cea1f7e6968b2ad5746e2113fdf5a8454d3759abf34fe65fbbea03babe2baa9eae4a96662b06
   languageName: node
   linkType: hard
 

@@ -32,9 +32,10 @@ const Index = (): ReactElement => {
     }
   );
 
-  useEffect(() => setMessageHistory([...messageHistory, lastMessage]), [
-    lastMessage,
-  ]);
+  useEffect(
+    () => setMessageHistory([...messageHistory, lastMessage]),
+    [lastMessage]
+  );
 
   useEffect(() => {
     return () => {

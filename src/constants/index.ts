@@ -29,7 +29,7 @@ export const SERVERS = [
     label: "Cardano Testnet",
     value: "wss://trezor-cardano-testnet.blockfrost.io",
   },
-] as const;
+];
 
 export const MESSAGES_PARAMS = [
   {
