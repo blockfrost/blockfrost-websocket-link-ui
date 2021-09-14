@@ -1,4 +1,4 @@
-import { MESSAGES_PARAMS, MESSAGES, SERVERS } from "../constants";
+import { MESSAGES_PARAMS, MESSAGES } from "../constants";
 import { Option } from "../types";
 import { UseFormMethods } from "react-hook-form";
 
@@ -20,12 +20,6 @@ export const getMessagesList = (): Option[] => {
   MESSAGES_PARAMS.map((message) =>
     options.push({ value: message.name, label: message.name })
   );
-  return options;
-};
-
-export const getServerOptions = (): Option[] => {
-  const options = [];
-  SERVERS.map((server) => options.push({ value: server, label: server }));
   return options;
 };
 

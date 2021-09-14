@@ -9,13 +9,8 @@ import GetBlockOptions from "./GetBlockOptions";
 import BalanceHistoryOptions from "./BalanceHistoryOptions";
 import AccountUtxoOptions from "./AccountUtxoOptions";
 import SubscribeAddressOptions from "./SubscribeAddressOptions";
-import {
-  getStatusColor,
-  getMessagesList,
-  getParams,
-  getServerOptions,
-} from "../../utils";
-import { MESSAGES } from "../../constants";
+import { getStatusColor, getMessagesList, getParams } from "../../utils";
+import { MESSAGES, SERVERS } from "../../constants";
 import { useFormContext, Controller, useWatch } from "react-hook-form";
 
 const Index = (): ReactElement => {
@@ -26,7 +21,6 @@ const Index = (): ReactElement => {
   const cmd: any = useWatch({ control, name: "command" });
   const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const messages = getMessagesList();
-  const servers = getServerOptions();
   const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
     socketUrl ? socketUrl.value : null,
     {
@@ -68,7 +62,7 @@ const Index = (): ReactElement => {
           <Controller
             name="socketUrl"
             control={control}
-            options={servers}
+            options={SERVERS}
             as={<Select instanceId="1" />}
           />
         </div>
