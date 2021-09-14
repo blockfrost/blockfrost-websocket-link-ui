@@ -9,31 +9,31 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@types/react-select": "^4.0.13",
+    "@types/react-select": "^4.0.17",
     "@types/valid-url": "^1.0.3",
-    "next": "^10.0.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-hook-form": "^6.15.5",
-    "react-select": "^4.2.1",
-    "react-use-websocket": "^2.5.0"
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.15.3",
+    "react-select": "^4.3.1",
+    "react-use-websocket": "^2.7.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.35",
-    "@types/react": "^17.0.3",
-    "@types/ws": "^7.4.0",
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
+    "@types/node": "^16.9.1",
+    "@types/react": "^17.0.20",
+    "@types/ws": "^7.4.7",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
     "autoprefixer": "latest",
-    "eslint": "^7.22.0",
-    "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "3.3.1",
-    "eslint-plugin-react": "^7.23.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "^7.25.1",
     "postcss": "latest",
-    "prettier": "^2.2.1",
-    "tailwindcss": "2.0.4",
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.3"
+    "prettier": "^2.4.0",
+    "tailwindcss": "2.2.15",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
   }
 }

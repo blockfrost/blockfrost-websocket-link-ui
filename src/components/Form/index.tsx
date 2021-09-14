@@ -58,7 +58,7 @@ const Index = (): ReactElement => {
         SERVER
       </h1>
       <div className="mt-5 flex flex-row">
-        <div className="max-w-sm" style={{ width: 384 }}>
+        <div className="max-w-sm" style={{ width: 280 }}>
           <Controller
             name="socketUrl"
             control={control}
@@ -76,7 +76,7 @@ const Index = (): ReactElement => {
         </div>
       </div>
       <div className="mt-5 flex flex-row">
-        <div className="max-w-sm" style={{ width: 384 }}>
+        <div className="max-w-sm" style={{ width: 280 }}>
           <Controller
             name="command"
             control={control}
