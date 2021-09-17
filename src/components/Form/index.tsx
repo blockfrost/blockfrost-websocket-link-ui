@@ -34,7 +34,11 @@ const Index = (): ReactElement => {
 
   useEffect(() => {
     if (!lastMessage) return;
-    const newMessage = { ...lastMessage, data: JSON.parse(lastMessage.data) };
+    const newMessage = {
+      ...lastMessage,
+      timestamp: new Date().getTime(),
+      data: JSON.parse(lastMessage.data),
+    };
     if (!messageHistory.find((m) => m.data.id === newMessage.data.id)) {
       setMessageHistory([newMessage, ...messageHistory]);
     }
@@ -124,7 +128,7 @@ const Index = (): ReactElement => {
       </div>
       {messageHistory.map((message) =>
         connectionStatus === "OPEN" ? (
-          <span key={message.data.id}>
+          <span key={`${message.data.id}:${message.timestamp}`}>
             <div className="mt-2">
               <pre className="px-6 py-4 bg-white shadow-xs mt-3 overflow-auto font-medium">
                 {JSON.stringify(message.data, null, 2)}

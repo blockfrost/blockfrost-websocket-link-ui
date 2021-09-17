@@ -24,7 +24,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["import"],
+  plugins: ["import", 'react-hooks'],
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "react/prop-types": "off",
@@ -32,5 +32,8 @@ module.exports = {
     "import/no-cycle": "off",
     "no-multi-assign": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    // React Hooks.
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
 };
