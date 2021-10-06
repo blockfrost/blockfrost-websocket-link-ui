@@ -6,6 +6,7 @@
     "dev": "next",
     "lint": "eslint './src/**/*' --ext .tsx,.ts",
     "start": "next start",
+    "now-build": "next build",
     "test": "jest --coverage"
   },
   "dependencies": {
