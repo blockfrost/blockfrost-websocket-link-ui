@@ -39,10 +39,8 @@ const Index = (): ReactElement => {
       timestamp: new Date().getTime(),
       data: JSON.parse(lastMessage.data),
     };
-    if (!messageHistory.find((m) => m.data.id === newMessage.data.id)) {
-      setMessageHistory([newMessage, ...messageHistory]);
-    }
-  }, [lastMessage, messageHistory]);
+    setMessageHistory((previous) => [newMessage, ...previous]);
+  }, [lastMessage]);
 
   useEffect(() => {
     return () => {
