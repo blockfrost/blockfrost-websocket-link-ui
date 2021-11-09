@@ -23,10 +23,11 @@ const Index = (): ReactElement => {
   const messages = getMessagesList();
   const isURLValid = isURL(socketUrl, {
     protocols: ["wss", "ws"],
+    require_tld: false,
   });
 
   const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
-    isURLValid ? socketUrl : "ws://127.0.0.1:3005"
+    isURLValid ? socketUrl : "ws://localhost:3005"
   );
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const Index = (): ReactElement => {
         <div className="max-w-sm" style={{ width: 380 }}>
           <input
             name="socketUrl"
-            defaultValue="ws://127.0.0.1:3005"
+            defaultValue="ws://localhost:3005"
             ref={register}
             className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
           />

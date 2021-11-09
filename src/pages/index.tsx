@@ -7,7 +7,7 @@ import { FormProvider, useForm } from "react-hook-form";
 const Index = (): ReactElement => {
   const methods = useForm<FormValues>({
     defaultValues: {
-      socketUrl: "ws://127.0.0.1:3005",
+      socketUrl: "ws://localhost:3005",
       command: {
         value: "GET_SERVER_INFO",
         label: "GET_SERVER_INFO",
