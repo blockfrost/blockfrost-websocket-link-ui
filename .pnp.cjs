@@ -39,6 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.20"],
             ["@types/react-select", "npm:4.0.17"],
             ["@types/valid-url", "npm:1.0.3"],
+            ["@types/validator", "npm:13.6.6"],
             ["@types/ws", "npm:7.4.7"],
             ["@typescript-eslint/eslint-plugin", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:4.31.1"],
             ["@typescript-eslint/parser", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:4.31.1"],
@@ -59,7 +60,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-use-websocket", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:2.7.1"],
             ["tailwindcss", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:2.2.15"],
             ["ts-node-dev", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:1.1.8"],
-            ["typescript", "patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"]
+            ["typescript", "patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"],
+            ["validator", "npm:13.7.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -197,6 +199,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.20"],
             ["@types/react-select", "npm:4.0.17"],
             ["@types/valid-url", "npm:1.0.3"],
+            ["@types/validator", "npm:13.6.6"],
             ["@types/ws", "npm:7.4.7"],
             ["@typescript-eslint/eslint-plugin", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:4.31.1"],
             ["@typescript-eslint/parser", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:4.31.1"],
@@ -217,7 +220,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-use-websocket", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:2.7.1"],
             ["tailwindcss", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:2.2.15"],
             ["ts-node-dev", "virtual:eeff37a6ad755768e182530938ed2215dabe914d2e6c434d465f0e4b05a5f84a783c858daee20be22a5f7cd1b84b049743e183030e5e8a89fecfe03bcd54f476#npm:1.1.8"],
-            ["typescript", "patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"]
+            ["typescript", "patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"],
+            ["validator", "npm:13.7.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -724,6 +728,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-valid-url-npm-1.0.3-173e0d6f59-bd527221b4.zip/node_modules/@types/valid-url/",
           "packageDependencies": [
             ["@types/valid-url", "npm:1.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/validator", [
+        ["npm:13.6.6", {
+          "packageLocation": "./.yarn/cache/@types-validator-npm-13.6.6-7bd89836c0-cae90ccbb0.zip/node_modules/@types/validator/",
+          "packageDependencies": [
+            ["@types/validator", "npm:13.6.6"]
           ],
           "linkType": "HARD",
         }]
@@ -7170,6 +7183,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["validate-npm-package-license", "npm:3.0.4"],
             ["spdx-correct", "npm:3.1.1"],
             ["spdx-expression-parse", "npm:3.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["validator", [
+        ["npm:13.7.0", {
+          "packageLocation": "./.yarn/cache/validator-npm-13.7.0-624277e841-2b83283de1.zip/node_modules/validator/",
+          "packageDependencies": [
+            ["validator", "npm:13.7.0"]
           ],
           "linkType": "HARD",
         }]
