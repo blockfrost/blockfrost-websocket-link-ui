@@ -21,9 +21,12 @@ const Index = (): ReactElement => {
   const cmd: any = useWatch({ control, name: "command" });
   const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const messages = getMessagesList();
-  const isURLValid = isURL(socketUrl);
+  const isURLValid = isURL(socketUrl, {
+    protocols: ["wss", "ws"],
+  });
+
   const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
-    isURLValid ? socketUrl : "ws://localhost:3000"
+    isURLValid ? socketUrl : "ws://127.0.0.1:3005"
   );
 
   useEffect(() => {
@@ -61,7 +64,7 @@ const Index = (): ReactElement => {
         <div className="max-w-sm" style={{ width: 380 }}>
           <input
             name="socketUrl"
-            defaultValue="ws://localhost:3005"
+            defaultValue="ws://127.0.0.1:3005"
             ref={register}
             className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
           />
