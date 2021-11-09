@@ -8,7 +8,7 @@ export interface Option {
 type Message = keyof typeof MESSAGES;
 
 export interface FormValues {
-  socketUrl: Option;
+  socketUrl: string;
   command: { value: Message; label: Message };
   accountInfoKey: string;
   balanceHistoryKey: string;

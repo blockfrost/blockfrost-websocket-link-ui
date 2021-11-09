@@ -1,6 +1,5 @@
 import React, { ReactElement, useState, useEffect, useRef } from "react";
 import Select from "react-select";
-import { Option } from "../../types";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import AccountInfoOptions from "./AccountInfoOptions";
 import GetTransactionOptions from "./GetTransactionOptions";
@@ -10,26 +9,21 @@ import BalanceHistoryOptions from "./BalanceHistoryOptions";
 import AccountUtxoOptions from "./AccountUtxoOptions";
 import SubscribeAddressOptions from "./SubscribeAddressOptions";
 import { getStatusColor, getMessagesList, getParams } from "../../utils";
-import { MESSAGES, SERVERS } from "../../constants";
+import { MESSAGES } from "../../constants";
 import { useFormContext, Controller, useWatch } from "react-hook-form";
+import isURL from "validator/lib/isURL";
 
 const Index = (): ReactElement => {
   const didUnmount = useRef(false);
   const [messageId, setMessageId] = useState(0);
-  const { getValues, control } = useFormContext();
-  const socketUrl: Option = useWatch({ control, name: "socketUrl" });
+  const { getValues, control, register } = useFormContext();
+  const socketUrl: string = useWatch({ name: "socketUrl" });
   const cmd: any = useWatch({ control, name: "command" });
   const [messageHistory, setMessageHistory] = useState<any[]>([]);
   const messages = getMessagesList();
+  const isURLValid = isURL(socketUrl);
   const { sendJsonMessage, lastMessage, readyState } = useWebSocket(
-    socketUrl ? socketUrl.value : null,
-    {
-      shouldReconnect: () => {
-        return didUnmount.current === false;
-      },
-      reconnectAttempts: 20,
-      reconnectInterval: 3000,
-    }
+    isURLValid ? socketUrl : "ws://localhost:3000"
   );
 
   useEffect(() => {
@@ -64,12 +58,12 @@ const Index = (): ReactElement => {
         SERVER
       </h1>
       <div className="mt-5 flex flex-row">
-        <div className="max-w-sm" style={{ width: 280 }}>
-          <Controller
+        <div className="max-w-sm" style={{ width: 380 }}>
+          <input
             name="socketUrl"
-            control={control}
-            options={SERVERS}
-            as={<Select instanceId="1" />}
+            defaultValue="ws://localhost:3005"
+            ref={register}
+            className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
           />
         </div>
         <div
@@ -82,7 +76,7 @@ const Index = (): ReactElement => {
         </div>
       </div>
       <div className="mt-5 flex flex-row">
-        <div className="max-w-sm" style={{ width: 280 }}>
+        <div className="max-w-sm" style={{ width: 380 }}>
           <Controller
             name="command"
             control={control}

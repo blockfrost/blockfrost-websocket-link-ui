@@ -1,14 +1,13 @@
 import React, { ReactElement } from "react";
 import Navigation from "../components/Navigation";
 import Main from "../components/Form";
-import { SERVERS } from "../constants";
 import { FormValues } from "../types";
 import { FormProvider, useForm } from "react-hook-form";
 
 const Index = (): ReactElement => {
   const methods = useForm<FormValues>({
     defaultValues: {
-      socketUrl: SERVERS[0],
+      socketUrl: "ws://localhost:3005",
       command: {
         value: "GET_SERVER_INFO",
         label: "GET_SERVER_INFO",
