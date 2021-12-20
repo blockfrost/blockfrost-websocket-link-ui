@@ -37,7 +37,7 @@ const Index = (): ReactElement => {
       timestamp: new Date().getTime(),
       data: JSON.parse(lastMessage.data),
     };
-    setMessageHistory((previous) => [newMessage, ...previous]);
+    setMessageHistory(previous => [newMessage, ...previous]);
   }, [lastMessage]);
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const Index = (): ReactElement => {
           RESPONSE
         </h1>
       </div>
-      {messageHistory.map((message) =>
+      {messageHistory.map(message =>
         connectionStatus === "OPEN" ? (
           <span key={`${message.data.id}:${message.timestamp}`}>
             <div className="mt-2">
