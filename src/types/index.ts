@@ -20,4 +20,5 @@ export interface FormValues {
   sendTransactionTransaction: string;
   getBlockHashOrNumber: string | number;
   subscribeAddressAddresses: string;
+  balanceHistoryGroupBy: number;
 }
