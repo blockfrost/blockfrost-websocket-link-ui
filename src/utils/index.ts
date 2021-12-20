@@ -17,7 +17,7 @@ export const getStatusColor = (status: string): string => {
 
 export const getMessagesList = (): Option[] => {
   const options = [];
-  MESSAGES_PARAMS.map((message) =>
+  MESSAGES_PARAMS.map(message =>
     options.push({ value: message.name, label: message.name })
   );
   return options;
@@ -43,9 +43,9 @@ export const getParams = (
     }
     case "GET_BALANCE_HISTORY": {
       const descriptor = getValues("balanceHistoryKey");
-      const from = getValues("from");
-      const to = getValues("to");
-      const groupBy = getValues("groupBy");
+      const from = parseInt(getValues("balanceHistoryFrom"), 10);
+      const to = parseInt(getValues("balanceHistoryTo"), 10);
+      const groupBy = parseInt(getValues("balanceHistoryGroupBy"), 10);
 
       return {
         descriptor,

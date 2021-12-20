@@ -24,6 +24,45 @@ function AccountInfoOptions(): ReactElement {
             />
           </div>
         </div>
+
+        <div className="flex flex-col pl-4" style={{ minWidth: 200 }}>
+          <label className="block text-grey-darker text-sm font-bold mb-2">
+            groupBy
+          </label>
+          <input
+            ref={register}
+            className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+            id="balanceHistoryGroupBy"
+            type="text"
+            name="balanceHistoryGroupBy"
+          />
+        </div>
+
+        <div className="flex flex-col pl-4" style={{ minWidth: 200 }}>
+          <label className="block text-grey-darker text-sm font-bold mb-2">
+            from
+          </label>
+          <input
+            ref={register}
+            className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+            id="balanceHistoryFrom"
+            type="text"
+            name="balanceHistoryFrom"
+          />
+        </div>
+
+        <div className="flex flex-col pl-4" style={{ minWidth: 200 }}>
+          <label className="block text-grey-darker text-sm font-bold mb-2">
+            to
+          </label>
+          <input
+            ref={register}
+            className="shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+            id="balanceHistoryTo"
+            type="text"
+            name="balanceHistoryTo"
+          />
+        </div>
       </div>
     </>
   );
