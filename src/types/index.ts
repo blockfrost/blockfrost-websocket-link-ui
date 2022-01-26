@@ -16,6 +16,7 @@ export interface FormValues {
   accountInfoPageSize: number;
   accountInfoPage: number;
   accountInfoDetails: Option;
+  accountInfoDeriveByronAddresses: boolean;
   getTransactionTxId: string;
   sendTransactionTransaction: string;
   getBlockHashOrNumber: string | number;

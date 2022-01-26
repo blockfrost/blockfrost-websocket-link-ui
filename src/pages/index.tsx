@@ -22,6 +22,7 @@ const Index = (): ReactElement => {
         value: "basic",
         label: "basic",
       },
+      accountInfoDeriveByronAddresses: false,
       balanceHistoryGroupBy: 86400,
       getTransactionTxId:
         "28172ea876c3d1e691284e5179fae2feb3e69d7d41e43f8023dc380115741026",

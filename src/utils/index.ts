@@ -33,12 +33,16 @@ export const getParams = (
       const details = getValues("accountInfoDetails").value;
       const page = parseInt(getValues("accountInfoPage"), 10);
       const pageSize = parseInt(getValues("accountInfoPageSize"), 10);
+      const deriveByronAddresses = !!getValues(
+        "accountInfoDeriveByronAddresses"
+      );
 
       return {
         descriptor,
         details,
         page,
         pageSize,
+        deriveByronAddresses,
       };
     }
     case "GET_BALANCE_HISTORY": {
@@ -46,12 +50,14 @@ export const getParams = (
       const from = parseInt(getValues("balanceHistoryFrom"), 10);
       const to = parseInt(getValues("balanceHistoryTo"), 10);
       const groupBy = parseInt(getValues("balanceHistoryGroupBy"), 10);
+      const deriveByronAddresses = !!getValues("balanceHistoryByronAddresses");
 
       return {
         descriptor,
         from,
         to,
         groupBy,
+        deriveByronAddresses,
       };
     }
 
