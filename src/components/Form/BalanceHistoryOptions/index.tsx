@@ -63,6 +63,18 @@ function AccountInfoOptions(): ReactElement {
             name="balanceHistoryTo"
           />
         </div>
+        <div className="flex flex-col pl-4" style={{ minWidth: 200 }}>
+          <label className="block text-grey-darker text-sm font-bold mb-2">
+            derive byron addresses
+          </label>
+          <input
+            type="checkbox"
+            ref={register}
+            className="h-7 w-7 cursor-pointer"
+            id="balanceHistoryByronAddresses"
+            name="balanceHistoryByronAddresses"
+          />
+        </div>
       </div>
     </>
   );
