@@ -73,7 +73,7 @@ export const getParams = (
 
     case "PUSH_TRANSACTION": {
       const transaction = getValues("sendTransactionTransaction");
-      return { transaction };
+      return { txData: transaction };
     }
 
     case "GET_BLOCK": {
